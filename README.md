@@ -52,7 +52,7 @@ protoc \
 - And check if these files were generated into *./src/protos/v1* folder:\
 ![Image of folder with sdk proto files][logo]
 
-[logo]: ./sdk-files.png
+[logo]: ./sdk-files-message.png
 
 ### Config Database connection and database called example_grpc
 
