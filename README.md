@@ -38,13 +38,8 @@ Project of example to expose resources using typescript and grpc framework.
 ### 2. Generate interfaces (sdks) that you will use to send and receive resources
 - Run: `cd ./src/protos/v1`
 - Run: `
-protoc \
-    --plugin="protoc-gen-ts=../../../node_modules/.bin/protoc-gen-ts" \
-    --plugin=protoc-gen-grpc=../../../node_modules/.bin/protoc-gen-ts \
-    --js_out="import_style=commonjs,binary:." \
-    --ts_out=service=grpc-node:"." \
-    examplegrpcApi.proto && cd ../../../
-    `
+protoc --plugin="protoc-gen-ts=../../../node_modules/.bin/protoc-gen-ts" --plugin=protoc-gen-grpc=../../../node_modules/.bin/protoc-gen-ts --js_out="import_style=commonjs,binary:." --ts_out=service=grpc-node:"."  examplegrpcApi.proto && cd ../../../ `
+
 > _This process to generate sdks is necessary per proto file (.proto) into src/protos/v1 folder)_
 
 - And after, check if these files were generated into *./src/protos/v1* folder:\
@@ -53,7 +48,10 @@ protoc \
 [logo]: ./sdk-files-message.png
 
 ```
-Important: This second step is necessary every time you change any file with a proto extension (contracts). It may also be necessary to install extra packages depending on the operating system, as is the case of the "protobuf-compiler" package in linux ubuntu.
+Important: This second step is necessary every time you change any file with a proto extension (contracts). 
+```
+```
+It may also be necessary to install extra packages depending on the operating system, as is the case of the "protobuf-compiler" package in linux ubuntu.
 ```
 
 ### 3. Config Database connection and database called example_grpc
