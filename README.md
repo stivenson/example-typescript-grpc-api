@@ -47,14 +47,14 @@ protoc \
     `
 > _This process to generate sdks is necessary per proto file (.proto) into src/protos/v1 folder)_
 
-
-> **Important:** This work is necessary every time you change any file with a proto extension (contracts).
-
-
 - And after, check if these files were generated into *./src/protos/v1* folder:\
 ![Image of folder with sdk proto files][logo]
 
 [logo]: ./sdk-files-message.png
+
+```
+Important: This second step is necessary every time you change any file with a proto extension (contracts). It may also be necessary to install extra packages depending on the operating system, as is the case of the "protobuf-compiler" package in linux ubuntu.
+```
 
 ### 3. Config Database connection and database called example_grpc
 
