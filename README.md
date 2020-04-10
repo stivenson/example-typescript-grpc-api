@@ -45,13 +45,13 @@ protoc \
     --ts_out=service=grpc-node:"." \
     examplegrpcApi.proto && cd ../../../
     `\
-> _(for each proto file (.proto) into src/protos/v1 folder)_
+> _This process to generate sdks is necessary per proto file (.proto) into src/protos/v1 folder)_
 
 
 > **Important:** This work is necessary every time you change any file with a proto extension (contracts).
 
 
-- And check if these files were generated into *./src/protos/v1* folder:\
+- And after, check if these files were generated into *./src/protos/v1* folder:\
 ![Image of folder with sdk proto files][logo]
 
 [logo]: ./sdk-files-message.png
