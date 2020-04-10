@@ -60,7 +60,7 @@ protoc \
 
 #### > Create the database using the preferred editor or executing this line by command line: 
 
-- `createdb -h localhost -p 5432 -U <some postgres user> example_grpc` (replace <some postgres user>)
+- `createdb -h localhost -p 5432 -U <some postgres user> example_grpc` (replace "<some postgres user>")
 
 #### > Replace connection values in .envrc file (clone .envrc_example file to create this file)
 
