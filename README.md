@@ -54,24 +54,24 @@ protoc \
 
 [logo]: ./sdk-files-message.png
 
-### Config Database connection and database called example_grpc
+### 3. Config Database connection and database called example_grpc
 
-#### 1. Create the database using the preferred editor or executing this line by command line: 
+#### > Create the database using the preferred editor or executing this line by command line: 
 
 - `createdb -h localhost -p 5432 -U <some postgres user> example_grpc` (replace <some postgres user>)
 
-#### 2. Replace connection values in .envrc file (clone .envrc_example file to create this file)
+#### > Replace connection values in .envrc file (clone .envrc_example file to create this file)
 
-#### 3. And run `source .envrc` to load this new environment values.
+#### > And run `source .envrc` to load this new environment values.
 
-### Run project
+### 4. Run project
 - `source .envrc && npm start`
 
-### Run tests in other console
+### 5. Run tests in other console
 - `source .envrc && npm run test`
 
 
-### Considerations
+## Considerations
 
 1. This example was create using macOs Catalina O.S. (but the steps should not vary much on other systems)
 2. The installation steps were also tested in [lubuntu](https://lubuntu.net/) on a virtual machine.
