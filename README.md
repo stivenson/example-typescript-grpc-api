@@ -49,7 +49,7 @@ protoc \
 > **Important:** This work is necessary every time you change any file with a proto extension (contracts).
 
 
-- And check if these files were generated into *./src/protos/v1* folder:
+- And check if these files were generated into *./src/protos/v1* folder:\
 ![Image of folder with sdk proto files][logo]
 
 [logo]: ./sdk-files.png
