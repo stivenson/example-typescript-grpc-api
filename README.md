@@ -44,7 +44,7 @@ protoc \
     --js_out="import_style=commonjs,binary:." \
     --ts_out=service=grpc-node:"." \
     examplegrpcApi.proto && cd ../../../
-    `\
+    `
 > _This process to generate sdks is necessary per proto file (.proto) into src/protos/v1 folder)_
 
 
