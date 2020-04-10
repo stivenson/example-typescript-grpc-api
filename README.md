@@ -3,12 +3,14 @@
 Project of example to expose resources using typescript and grpc framework.
 
 ## Requirements
-- Nodejs v12.16+
-- Postgresql v11.5+ running
-- Git
+- nodejs v12.16+
+- npm 6.13.x+
+- postgresql v11.5+ running
+- git
 
 ## Commands to check requirements
 - `node --version`
+- `npm --version`
 - `postgres --version`
 - `git --version`
 
