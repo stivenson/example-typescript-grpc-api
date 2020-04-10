@@ -16,7 +16,6 @@ option java_multiple_files = true;
 option java_outer_classname = "ExampleGrpcApiProto";
 option java_package = "com.examplegrpc.v1";
 option objc_class_prefix = "lx";
-option php_namespace = "Examplegrpc\\V1";
 
 // ExamplegrpcAPI manager endpoints.
 
