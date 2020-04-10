@@ -1,0 +1,11 @@
+export POSTGRESQL_DATABASE=example_grpc
+export POSTGRESQL_USER=an_user
+export POSTGRESQL_PASSWORD=a_password
+export POSTGRESQL_HOST=localhost
+export POSTGRESQL_PORT=5432
+export PATH_PROTO_FILE=./protos/v1/examplegrpcApi.proto
+export PORT=50051 # standart port to protocol rpc
+
+# optional use to more debug imformation
+# export GRPC_VERBOSITY=DEBUG;
+# export env GRPC_TRACE=all;

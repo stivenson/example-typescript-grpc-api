@@ -1,0 +1,63 @@
+// Copyright 2020, Stivenson Rincón
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+syntax="proto3";
+
+package examplegrpc.v1;
+
+option csharp_namespace = "Examplegrpc.V1";
+option go_package = "examplegrpcv1";
+option java_multiple_files = true;
+option java_outer_classname = "ExampleGrpcApiProto";
+option java_package = "com.examplegrpc.v1";
+option objc_class_prefix = "lx";
+option php_namespace = "Examplegrpc\\V1";
+
+// ExamplegrpcAPI manager endpoints.
+
+service ExamplegrpcAPI {
+
+    // GetUsers To get all users
+    rpc GetUsers(GetUsersRequest) returns (GetUsersResponse){};
+    // others endpoints
+
+}
+
+// ==== Entities MESSAGES ==== 
+
+message User {
+    int32 id = 1;
+    string name = 2;
+    string photo = 3;
+    int32 typeUser = 4;
+    int32 professionsId = 5;
+    string username = 6;
+    string password = 7;
+    string email = 8;
+}
+
+
+
+// ==== RPC Examplegrpc MESSAGES ==== 
+
+// SendRequest.
+message GetUsersRequest {
+    int32 page = 1;
+    int32 size = 2;
+}
+
+// SendResponse.
+message GetUsersResponse {
+    repeated User users = 1;
+    int32 page = 2;
+    int32 size = 3;
+    bool success = 4;
+    string message = 5;
+}
+
+// other messages

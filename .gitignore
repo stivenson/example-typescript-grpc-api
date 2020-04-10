@@ -1,0 +1,6 @@
+build
+node_modules
+test/coverage
+notes_dev.txt
+.envrc
+.DS_Store

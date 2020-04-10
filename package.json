@@ -1,0 +1,66 @@
+{
+  "name": "example_grpc_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "rimraf build/*",
+    "test": "jest",
+    "tsc": "tsc",
+    "start:dev": "npm-run-all build start",
+    "watch:dev": "nodemon --watch src -e ts,ejs,json --exec npm run start:dev",
+    "build": "npm-run-all clean tsc && cp -r src/protos build",
+    "start": "npm run build && node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stivenson/example-typescript-grpc-api.git"
+  },
+  "author": "stivenson.rpm@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.3",
+    "@hapi/joi": "^17.1.1",
+    "@improbable-eng/grpc-web": "^0.12.0",
+    "@types/google-protobuf": "^3.7.2",
+    "google-protobuf": "^3.11.4",
+    "grpc": "^1.24.2",
+    "grpc-web-client": "^0.7.0",
+    "module-alias": "^2.2.2",
+    "npm-run-all": "^4.1.5",
+    "path": "^0.12.7",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "postgres-migrations": "^4.0.2",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.5.4",
+    "sequelize": "^5.21.5",
+    "sequelize-typescript": "^1.1.0"
+  },
+  "_moduleAliases": {
+    "~": "build",
+    "@postgresql": "build/postgresql",
+    "@models": "build/models",
+    "@repositories": "build/repositories",
+    "@implementations": "build/implementations",
+    "@protos": "build/protos"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.30",
+    "@types/hapi__joi": "^16.0.12",
+    "@types/jest": "^25.1.4",
+    "@types/module-alias": "^2.0.0",
+    "@types/node": "^13.9.0",
+    "@types/pg": "^7.14.1",
+    "@types/validator": "^12.0.1",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "protoc-gen-ts": "^0.1.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.6.2",
+    "ts-protoc-gen": "^0.12.1-pre.a78a914",
+    "tslint-html-report": "^2.0.3",
+    "typescript": "^3.8.3"
+  }
+}
