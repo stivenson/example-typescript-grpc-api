@@ -36,11 +36,12 @@ export default class Users {
       const usersPsql = await repo.findAll()
 
       const usersPB: UserPb[] = []
+
       // Set values
-      usersPsql.forEach(userPsql => {
+      usersPsql.map(userPsql => {
         let userPb = new UserPb()
         userPb.setName(userPsql.name)
-        userPb.setEmail(userPsql.name)
+        userPb.setEmail(userPsql.email)
         // others possible set values
         usersPB.push(userPb)
       });
@@ -52,6 +53,7 @@ export default class Users {
       result.setMessage("500: general error performing the request");
       result.setSuccess(false)
     }
+    log(result.getUsersList());
     return result
   }
 
