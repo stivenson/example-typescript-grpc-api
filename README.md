@@ -3,7 +3,7 @@
 Project of example to expose resources using typescript and grpc framework.
 
 ## Technologies used
-
+| -- |
 |-----------|
 | - **Typescript** (Typed superset of JavaScript that compiles to plain JavaScript.)|
 | - **Grpc** (A high-performance, open source universal RPC framework.)|
