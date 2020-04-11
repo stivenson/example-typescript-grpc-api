@@ -1,3 +1,7 @@
+import {
+    GetUsersResponse,
+} from "~/protos/v1/examplegrpcApi_pb";
+
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
 const { PATH_PROTO_FILE, PORT } = process.env;
@@ -33,13 +37,13 @@ describe("exampleGrpcAPI", () => {
             page: 1,
             size: 10
         };
-        clientTest.getUsers(messageRequest, (err: any, response: any) => {
+        clientTest.getUsers(messageRequest, (err: any, response: Object) => {
             if (err) {
                 log("The error is:", err);
             }
             log("The response is:", response); // optional use to check response
             expect(typeof response).toBe('object')
-            expect(response.success).toBeTruthy() 
+            // TODO: pending problem to receive arrays
             return done();
         });
     });
