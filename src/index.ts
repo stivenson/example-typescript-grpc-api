@@ -5,6 +5,7 @@ import * as protoLoader from "@grpc/proto-loader"
 import { log } from "console"
 import * as grpc from "grpc"
 import Users from "./implementations/users";
+import { initTables } from "./models"
 
 const {
     PATH_PROTO_FILE,
@@ -45,5 +46,13 @@ server.addService(proto.examplegrpc.v1.ExamplegrpcAPI.service, {
 
 server.bind(`0.0.0.0:${PORT}`, grpc.ServerCredentials.createInsecure());
 
-log(`Server started successfully on ${PORT}`);
-server.start();
+const initAll = async () => {
+    if(!(await initTables())) {
+        log(`Problems with creation of tables in database`);
+    } else {
+        server.start();
+        log(`Server started successfully on ${PORT}`);
+    }
+}
+
+initAll()
