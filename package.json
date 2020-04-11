@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "clean": "rimraf build/*",
-    "test": "jest --silent",
+    "test": "jest --passWithNoTests",
     "tsc": "tsc",
     "start:dev": "npm-run-all build start",
     "watch:dev": "nodemon --watch src -e ts,ejs,json --exec npm run start:dev",
