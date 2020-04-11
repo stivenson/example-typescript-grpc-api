@@ -35,17 +35,20 @@ export default class Users {
     try {
       const usersPsql = await repo.findAll()
 
-      const usersPB: UserPb[] = []
-
       // Set values
       usersPsql.map(userPsql => {
         let userPb = new UserPb()
         userPb.setName(userPsql.name)
         userPb.setEmail(userPsql.email)
+        userPb.setPhoto(userPsql.photo)
+        userPb.setTypeuser(userPsql.typeUser)
+        userPb.setUsername(userPsql.username)
+        userPb.setProfessionsid(userPsql.professionsId)
+        userPb.setPassword("")
         // others possible set values
-        usersPB.push(userPb)
+
+        result.addUsers(userPb)
       });
-      result.setUsersList(usersPB)
       result.setMessage("200: Users successfully obtained")
       result.setSuccess(true)
     } catch (e) {
@@ -53,7 +56,7 @@ export default class Users {
       result.setMessage("500: general error performing the request");
       result.setSuccess(false)
     }
-    log(result.getUsersList());
+    log(result.getUsersList())
     return result
   }
 

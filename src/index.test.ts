@@ -39,7 +39,7 @@ describe("exampleGrpcAPI", () => {
             }
             log("The response is:", response); // optional use to check response
             expect(typeof response).toBe('object')
-            expect(response.success).toBeTruthy()         
+            expect(response.success).toBeTruthy() 
             return done();
         });
     });
