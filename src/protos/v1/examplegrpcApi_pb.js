@@ -339,7 +339,7 @@ proto.examplegrpc.v1.User.prototype.setPhoto = function(value) {
 
 
 /**
- * optional int32 typeUser = 4;
+ * optional int32 typeuser = 4;
  * @return {number}
  */
 proto.examplegrpc.v1.User.prototype.getTypeuser = function() {

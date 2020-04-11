@@ -33,7 +33,7 @@ message User {
     int32 id = 1;
     string name = 2;
     string photo = 3;
-    int32 typeUser = 4;
+    int32 typeuser = 4;
     int32 professionsid = 5;
     string username = 6;
     string password = 7;
