@@ -47,11 +47,15 @@ server.addService(proto.examplegrpc.v1.ExamplegrpcAPI.service, {
 server.bind(`0.0.0.0:${PORT}`, grpc.ServerCredentials.createInsecure());
 
 const initAll = async () => {
-    if(!(await initTables())) {
-        log(`Problems with creation of tables in database`);
-    } else {
-        server.start();
-        log(`Server started successfully on ${PORT}`);
+    try {
+        if (!(await initTables())) {
+            log(`Problems with creation of tables in database`);
+        } else {
+            server.start();
+            log(`Server started successfully on ${PORT}`);
+        }   
+    } catch (error) {
+        log(`Problems with creation of tables in database, please check connection values y postgres status`);
     }
 }
 
