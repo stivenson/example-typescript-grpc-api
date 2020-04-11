@@ -36,6 +36,7 @@ class ExampleGrpcApi implements IExampleGrpcApi {
         const getDataRequest = Users.setFromRequest(call.request);
         const getUsersImpl = new Users(getDataRequest);
         const rs = await getUsersImpl.getAllUsers();
+        log("---> getUsers");
         return callback(null, rs.toObject());
     }
 }

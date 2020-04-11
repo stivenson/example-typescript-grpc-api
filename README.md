@@ -50,7 +50,7 @@ Project of example to expose resources using typescript and grpc framework.
 ### 2. Generate interfaces (sdks) that you will use to send and receive resources
 - Run: `cd ./src/protos/v1`
 - Run: `
-protoc --plugin="protoc-gen-ts=../../../node_modules/.bin/protoc-gen-ts" --plugin=protoc-gen-grpc=../../../node_modules/.bin/protoc-gen-ts --js_out="import_style=commonjs,binary:." --ts_out=service=grpc-node:"."  examplegrpcApi.proto && cd ../../../ `
+protoc --plugin="protoc-gen-ts=../../../node_modules/.bin/protoc-gen-ts" --plugin=protoc-gen-grpc=../../../node_modules/.bin/protoc-gen-ts --js_out="import_style=commonjs,binary:." --ts_out=service=grpc-web:"."  examplegrpcApi.proto && cd ../../../ `
 
 > _This process to generate sdks is necessary per proto file (.proto) into src/protos/v1 folder)_
 
