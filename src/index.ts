@@ -6,6 +6,7 @@ import { log } from "console"
 import * as grpc from "grpc"
 import Users from "./implementations/users";
 import { initTables } from "./models"
+import { exists } from 'fs';
 
 const {
     PATH_PROTO_FILE,
@@ -56,6 +57,7 @@ const initAll = async () => {
         }   
     } catch (error) {
         log(`Problems with creation of tables in database, please check connection values y postgres status`);
+        process.exit(0)
     }
 }
 
