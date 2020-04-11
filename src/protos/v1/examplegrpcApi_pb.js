@@ -354,7 +354,7 @@ proto.examplegrpc.v1.User.prototype.setTypeuser = function(value) {
 
 
 /**
- * optional int32 professionsId = 5;
+ * optional int32 professionsid = 5;
  * @return {number}
  */
 proto.examplegrpc.v1.User.prototype.getProfessionsid = function() {
