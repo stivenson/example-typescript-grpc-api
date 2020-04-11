@@ -75,11 +75,33 @@ export namespace GetUsersRequest {
   }
 }
 
-export class GetUsersResponse extends jspb.Message {
+export class ContentUserArray extends jspb.Message {
   clearUsersList(): void;
   getUsersList(): Array<User>;
   setUsersList(value: Array<User>): void;
   addUsers(value?: User, index?: number): User;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ContentUserArray.AsObject;
+  static toObject(includeInstance: boolean, msg: ContentUserArray): ContentUserArray.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ContentUserArray, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ContentUserArray;
+  static deserializeBinaryFromReader(message: ContentUserArray, reader: jspb.BinaryReader): ContentUserArray;
+}
+
+export namespace ContentUserArray {
+  export type AsObject = {
+    usersList: Array<User.AsObject>,
+  }
+}
+
+export class GetUsersResponse extends jspb.Message {
+  hasContusers(): boolean;
+  clearContusers(): void;
+  getContusers(): ContentUserArray | undefined;
+  setContusers(value?: ContentUserArray): void;
 
   getPage(): number;
   setPage(value: number): void;
@@ -105,7 +127,7 @@ export class GetUsersResponse extends jspb.Message {
 
 export namespace GetUsersResponse {
   export type AsObject = {
-    usersList: Array<User.AsObject>,
+    contusers?: ContentUserArray.AsObject,
     page: number,
     size: number,
     success: boolean,

@@ -50,9 +50,13 @@ message GetUsersRequest {
     int32 size = 2;
 }
 
+message ContentUserArray {
+    repeated User users = 1; // arrays sent without a container have problems currently
+}
+
 // SendResponse.
 message GetUsersResponse {
-    repeated User users = 1;
+    ContentUserArray contusers = 1; // use of camelCase have problems currently
     int32 page = 2;
     int32 size = 3;
     bool success = 4;

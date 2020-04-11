@@ -4,7 +4,8 @@ import { log } from "console";
 import {
   GetUsersRequest,
   GetUsersResponse,
-  User as UserPb
+  User as UserPb,
+  ContentUserArray,
 } from "~/protos/v1/examplegrpcApi_pb";
 import User from "@models/users"
 import { UsersRepository } from "@repositories/users"
@@ -34,7 +35,7 @@ export default class Users {
     const repo = new UsersRepository(User)
     try {
       const usersPsql = await repo.findAll()
-
+      const contentUserArray = new ContentUserArray()
       // Set values
       usersPsql.map(userPsql => {
         let userPb = new UserPb()
@@ -47,8 +48,9 @@ export default class Users {
         userPb.setPassword("")
         // others possible set values
 
-        result.addUsers(userPb)
+        contentUserArray.addUsers(userPb)
       });
+      result.setContusers(contentUserArray)
       result.setMessage("200: Users successfully obtained")
       result.setSuccess(true)
     } catch (e) {
@@ -56,7 +58,7 @@ export default class Users {
       result.setMessage("500: general error performing the request");
       result.setSuccess(false)
     }
-    log(result.getUsersList())
+    log(result.getContusers())
     return result
   }
 
