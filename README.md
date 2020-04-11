@@ -2,6 +2,15 @@
 
 Project of example to expose resources using typescript and grpc framework.
 
+| Technologies used |
+|-----------|
+| - **Typescript** (Typed superset of JavaScript that compiles to plain JavaScript.)|
+| - **Grpc** (A high-performance, open source universal RPC framework.)|
+| - **Decorators and sequelize (v5)** for an orm implementation to postgres database.|
+| - **Generic typescript** for an implementation of the *repository pattern* in logic.|
+| - **Definition of contracts** in a .proto file: GRPC provides protocol buffer compiler plugins that generate client- and server-side code _(similar to sdks)_. gRPC users typically call these APIs on the client side and implement the corresponding API on the server side.|
+| - **Jest** (Implementation of tests.)|
+
 ## Requirements
 - nodejs v12.16+
 - npm 6.13.x+
@@ -20,16 +29,8 @@ Project of example to expose resources using typescript and grpc framework.
 - `git --version`
 - `protoc --version` (Protobuf Compiler)
 
-## Technologies used
 
-- **Typescript** (Typed superset of JavaScript that compiles to plain JavaScript.)
-- **Grpc** (A high-performance, open source universal RPC framework.)
-- **Decorators and sequelize (v5)** for an orm implementation to postgres database.
-- **Generic typescript** for an implementation of the *repository pattern* in logic.
-- **Definition of contracts** in a .proto file: GRPC provides protocol buffer compiler plugins that generate client- and server-side code _(similar to sdks)_. gRPC users typically call these APIs on the client side and implement the corresponding API on the server side.
-- **Jest** (Implementation of tests.)
-
-### Folder descriptions
+## Folder descriptions
 
 - **_src/models_**: Models definitions (interaction with persistence through ORM).
 - **_src/postgresql_**: Postgres config.
