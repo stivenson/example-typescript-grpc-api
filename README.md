@@ -33,9 +33,16 @@ Project of example to expose resources using typescript and grpc framework.
 
 ## Getting Started
 
-### 1. Install dependencies `npm i`
+### 1. Install dependencies
 
-### 2. Generate interfaces (sdks) that you will use to send and receive resources
+- Run: `npm i`
+
+### 2. Installing the Protobuf Compiler
+
+- To macOs: [instructions](https://medium.com/@erika_dike/installing-the-protobuf-compiler-on-a-mac-a0d397af46b8)
+- To Ubuntu: install package `protobuf-compiler`
+
+### 3. Generate interfaces (sdks) that you will use to send and receive resources
 - Run: `cd ./src/protos/v1`
 - Run: `
 protoc --plugin="protoc-gen-ts=../../../node_modules/.bin/protoc-gen-ts" --plugin=protoc-gen-grpc=../../../node_modules/.bin/protoc-gen-ts --js_out="import_style=commonjs,binary:." --ts_out=service=grpc-node:"."  examplegrpcApi.proto && cd ../../../ `
@@ -50,11 +57,8 @@ protoc --plugin="protoc-gen-ts=../../../node_modules/.bin/protoc-gen-ts" --plugi
 ```
 Important: This second step is necessary every time you change any file with a proto extension (contracts). 
 ```
-```
-It may also be necessary to install extra packages depending on the operating system, as is the case of the "protobuf-compiler" package in linux ubuntu.
-```
 
-### 3. Config Database connection and database called example_grpc
+### 4. Config Database connection and database called example_grpc
 
 #### > Create the database using the preferred editor or executing this line by command line: 
 
@@ -64,10 +68,10 @@ It may also be necessary to install extra packages depending on the operating sy
 
 #### > And run `source .envrc` to load this new environment values.
 
-### 4. Run project
+### 5. Run project
 - `source .envrc && npm start`
 
-### 5. Run tests in other console
+### 6. Run tests in other console
 - `source .envrc && npm run test`
 
 
