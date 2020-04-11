@@ -17,10 +17,12 @@ const PATH_PROTO = PATH_PROTO_FILE || ""
 const dirPathProtoFile = path.join(__dirname, PATH_PROTO);
 
 const packageDefinition = protoLoader.loadSync(dirPathProtoFile, {
-    defaults: true,
-    enums: String,
+    keepCase: false,
     longs: String,
+    enums: String,
+    defaults: true,
     oneofs: true,
+    arrays: true
 });
 
 const proto = grpc.loadPackageDefinition(packageDefinition) as any
