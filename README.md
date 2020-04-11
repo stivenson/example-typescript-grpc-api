@@ -1,5 +1,7 @@
 # Example Typescript Grpc API
 
+[![Build Status](https://travis-ci.org/stivenson/example-typescript-grpc-api.svg?branch=master)](https://travis-ci.org/stivenson/example-typescript-grpc-api)
+
 Project of example to expose resources using typescript and grpc framework.
 
 ## Technologies used
