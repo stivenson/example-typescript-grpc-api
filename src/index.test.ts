@@ -2,9 +2,9 @@ import { grpc as grpcweb } from "@improbable-eng/grpc-web";
 import { NodeHttpTransport } from "@improbable-eng/grpc-web-node-http-transport";
 import { GetUsersRequest, GetUsersResponse } from "@protos/v1/examplegrpcApi_pb"
 import { ExamplegrpcAPI } from "@protos/v1/examplegrpcApi_pb_service"
-const { PORT } = process.env;
+const { ENVOY_PROXY_PORT } = process.env;
 const HOST = "http://0.0.0.0";
-const SERVER_URL = `${HOST}:${PORT}`;
+const SERVER_URL = `${HOST}:${ENVOY_PROXY_PORT}`;
 const { log } = console;
 
 describe("exampleGrpcAPI", () => {
@@ -30,6 +30,7 @@ describe("exampleGrpcAPI", () => {
 
         client.onMessage((message: grpcweb.ProtobufMessage) => {
             console.log("onMessage: ", message.toObject());
+            const getUsersResponse = new GetUsersResponse()
         });
 
         client.start(new grpcweb.Metadata({ "example": "typescript and grpc" }));

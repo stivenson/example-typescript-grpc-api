@@ -13,12 +13,14 @@ Project of example to expose resources using typescript and grpc framework.
 | - **Generic typescript** for an implementation of the *repository pattern* in logic.|
 | - **Definition of contracts** in a .proto file: GRPC provides protocol buffer compiler plugins that generate client- and server-side code _(similar to sdks)_. gRPC users typically call these APIs on the client side and implement the corresponding API on the server side.|
 | - **Jest** (Implementation of tests.)|
+|- **Envoy proxy** (To use of grpc serve from web client in tests.)|
 
 ## Requirements
 - nodejs v12.16+
 - npm 6.13.x+
 - postgresql v11.5+ running
 - git
+- docker 19.x+ running
 
 ## Installing the Protobuf Compiler
 
@@ -31,6 +33,7 @@ Project of example to expose resources using typescript and grpc framework.
 - `postgres --version` (or similar depending Operating System, O.S.)
 - `git --version`
 - `protoc --version` (Protobuf Compiler)
+- `docker --version`
 
 
 ## Folder descriptions
@@ -76,9 +79,17 @@ Important: This second step is necessary every time you change any file with a p
 ### 4. Run project
 - `source .envrc && npm start`
 
-### 5. Run tests in other console
+### 5. Start envoy proxy using docker in other console
+- run: `cd envoy-proxy`
+- run: `docker build -t envoy:v1 .`
+- run: `docker run  -p 8080:8080 --ip=192.168.0.13  envoy:v1`
+
+> If "PORT" is not visible in the list that appears with the command "docker ps" you need to use your local ip, so:  `docker run  -p 8080:8080 --ip=<here your local ip>  envoy:v1 (but before this remember to stop and destroy the container you just created)`
+
+### 6. Run tests in other console
 - `source .envrc && npm run test`
 
+> Important: If when running the tests the proxy does not establish a connection to the grpc server, it is necessary that you replace your local ip in the file **_envoy-proxy/envoy.yaml_** in all the "places where the ip is: "0.0.0.0"
 
 ## Considerations
 
@@ -91,3 +102,4 @@ Important: This second step is necessary every time you change any file with a p
 - [Getting starter typescript project](https://khalilstemmler.com/blogs/typescript/node-starter-project/)
 - [Repository pattern](https://medium.com/@erickwendel/generic-repository-with-typescript-and-node-js-731c10a1b98e)
 - [ORM](https://github.com/RobinBuschmann/sequelize-typescript)
+- [Envoy proxy and grpc](https://grpc.io/docs/tutorials/basic/web/#configure-the-envoy-proxy)
